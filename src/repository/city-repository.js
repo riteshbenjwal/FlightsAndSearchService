@@ -13,8 +13,8 @@ class CityRepository {
 
   async deleteCity(cityId) {
     try {
-      const city = await City.destroy({ where: { id: cityId } });
-      return city;
+      await City.destroy({ where: { id: cityId } });
+      return true;
     } catch (error) {
       throw { error };
     }
